@@ -6,16 +6,15 @@ const tickets = [
   { ticketNumber: 1005, issue: "Software installation", priority: "Low", status: "Closed" }
 ];
 
-
 function getTicketsNeedingAttention(ticketList) {
   return ticketList.filter((ticket) =>
     ticket.status === "Open" || ticket.status === "Pending"
   );
 }
 
-
 const ticketsNeedingAttention = getTicketsNeedingAttention(tickets);
 
+console.log("IT Helpdesk Ticket Report");
 
 for (const ticket of ticketsNeedingAttention) {
   console.log(
@@ -23,5 +22,11 @@ for (const ticket of ticketsNeedingAttention) {
   );
 }
 
+const count = ticketsNeedingAttention.length;
 
-console.log(`${ticketsNeedingAttention.length} tickets need attention.`);
+if (count === 1) {
+  console.log("1 ticket needs attention.");
+} else {
+  console.log(`${count} tickets need attention.`);
+}
+
